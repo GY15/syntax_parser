@@ -16,7 +16,20 @@ public class Derivation {
         this.tail = tail;
     }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setHead(Sign head) {
+        this.head = head;
+    }
+
+    public void setTail(List<Sign> tail) {
+        this.tail = tail;
+    }
+
     public int getID() {
+
         return ID;
     }
 

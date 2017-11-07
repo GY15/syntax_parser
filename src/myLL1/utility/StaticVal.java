@@ -13,6 +13,11 @@ public class StaticVal {
      * */
     private static HashMap<String,Character> map = new HashMap<>();
 
+    public static void init(){
+        map.put("ε",'ε');
+    }
+
+    public static Sign firstSign;
 
     //返回目前sign的ID的号码
     private static char id = 'A';
@@ -23,6 +28,10 @@ public class StaticVal {
         }else{
             return map.get(str);
         }
+    }
+
+    public static Sign getNullSign(){
+        return new Sign('ε',"ε",true);
     }
 
     //返回目前表达式的号码

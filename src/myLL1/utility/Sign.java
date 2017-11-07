@@ -13,4 +13,21 @@ public class Sign {
         this.val = val;
         this.isTerminal = isTerminal;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return ((Sign) obj).ID == this.ID;
+    }
+
+    public char getID() {
+        return ID;
+    }
+
+    public String getVal() {
+        return val;
+    }
+
+    public boolean isTerminal() {
+        return isTerminal;
+    }
 }

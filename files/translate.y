@@ -1,7 +1,7 @@
 expr : expr + term
-      | expr
+      | term
       ;
-term : term + factor
+term : term * factor
       | factor
        ;
 factor : ( expr )
