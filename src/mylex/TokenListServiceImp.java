@@ -9,6 +9,7 @@ import mylex.exception.NotREsException;
 import mylex.exception.WrongSort;
 import mylex.utility.StaticVal;
 import mylex.utility.Token;
+import mylex.utility.Token_RE;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class TokenListServiceImp implements TokenListService{
     List<Token> tokensList =new ArrayList<>();
-
+    List<String> expr = new ArrayList<>();
     @Override
     public List<Token> getTokenList()
     {
@@ -35,6 +36,9 @@ public class TokenListServiceImp implements TokenListService{
             e4.printStackTrace();
         }
         NFA_collection handleRE = new NFA_collection(handler.getExpressions());
+        for (Token_RE re : handler.getExpressions()) {
+            expr.add(re.getToken());
+        }
         DFA_collection handle = null;
         try {
             handleRE.handle_RE_to_NFA();
@@ -63,8 +67,8 @@ public class TokenListServiceImp implements TokenListService{
             for (List<Token> tokens : tokenLists) {
                 for (Token token : tokens) {
                     if (!token.getToken().equals("ε")) {
-                        System.out.print(token.getToken());
-//                        bw.write(token.getToken()+"\t"+token.getYylval()+"\t"+token.getText()+"\n");
+//                        System.out.print(token.getAllToken());
+//                        bw.write(token.getAllToken()+"\t"+token.getYylval()+"\t"+token.getText()+"\n");
                             tokensList.add(token);
 
                     }
@@ -79,5 +83,10 @@ public class TokenListServiceImp implements TokenListService{
         }
 
         return tokensList;
+    }
+
+    @Override
+    public List<String> getAllToken() {
+        return this.expr;
     }
 }

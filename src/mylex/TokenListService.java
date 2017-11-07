@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface TokenListService {
     List<Token> getTokenList();
+    List<String> getAllToken();
 }
