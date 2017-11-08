@@ -6,3 +6,4 @@ term : term * factor
        ;
 factor : ( expr )
       | NUMBER
+      ;

@@ -57,7 +57,6 @@ public class Monitor {
                             stack.push(signs.get(i));
                         }
                     }
-
                 }else{
                     throw new InputError();
                 }
