@@ -1,0 +1,33 @@
+输出 expr ->  term expr.
+输出 term ->  factor term.
+输出 factor ->  NUMBER
+匹配 NUMBER (10)
+输出 term. ->  ε
+输出 expr. ->  + term expr.
+匹配 +
+输出 term ->  factor term.
+输出 factor ->  NUMBER
+匹配 NUMBER (12)
+输出 term. ->  * factor term.
+匹配 *
+输出 factor ->  NUMBER
+匹配 NUMBER (12)
+输出 term. ->  * factor term.
+匹配 *
+输出 factor ->  ( expr )
+匹配 (
+输出 expr ->  term expr.
+输出 term ->  factor term.
+输出 factor ->  NUMBER
+匹配 NUMBER (1)
+输出 term. ->  ε
+输出 expr. ->  + term expr.
+匹配 +
+输出 term ->  factor term.
+输出 factor ->  NUMBER
+匹配 NUMBER (1)
+输出 term. ->  ε
+输出 expr. ->  ε
+匹配 )
+输出 term. ->  ε
+输出 expr. ->  ε

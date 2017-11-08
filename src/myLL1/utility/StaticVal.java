@@ -15,9 +15,12 @@ public class StaticVal {
 
     public static void init(){
         map.put("ε",'ε');
+        map.put("$" ,'$');
+        endOfSentence = new Sign('$',"$",true);
     }
 
     public static Sign firstSign;
+    public static Sign endOfSentence;
 
     //返回目前sign的ID的号码
     private static char id = 'A';
